@@ -22,6 +22,16 @@ const config: Partial<UserConfig> = {
     ],
     outline: {
       level: 'deep'
+    },
+    footer: {
+      message: '使用 CC BY-NC-SA 4.0 许可证进行分享',
+      copyright: 'Copyright © 2026 Xiaosu'
+    },
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
     }
   },
   markdown: {
@@ -55,5 +65,15 @@ const i18nConfig: Partial<VitePressI18nOptions> = {
   searchProvider: 'local' as const
 }
 
+// 添加 editLink 配置到最终配置中
+const finalConfig = withSidebar(withI18n(config, i18nConfig), sidebarConfig);
+finalConfig.themeConfig = {
+  ...finalConfig.themeConfig,
+  editLink: {
+    pattern: 'https://github.com/suq-weer/neoTutorial/edit/master/docs/:path',
+    text: '在 GitHub 上编辑此页'
+  }
+};
+
 // https://vitepress.dev/reference/site-config
-export default defineConfig(withSidebar(withI18n(config, i18nConfig), sidebarConfig))
+export default defineConfig(finalConfig)
