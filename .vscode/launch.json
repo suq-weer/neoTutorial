@@ -1,0 +1,48 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "启动 VitePress 开发服务器",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["docs:dev"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "serverReadyAction": {
+                "pattern": "Local: http://localhost:(\\d+)",
+                "uriFormat": "http://localhost:%s",
+                "action": "debugWithChrome"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "在 Chromium 中打开 (localhost:5173)",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}",
+            "runtimeExecutable": "/usr/bin/chromium-browser",
+            "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "在默认浏览器中打开 (localhost:5173)",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "启动开发环境 (服务器 + Chromium)",
+            "configurations": ["启动 VitePress 开发服务器", "在 Chromium 中打开 (localhost:5173)"],
+            "stopAll": true
+        }
+    ]
+}
