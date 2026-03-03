@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /tutorials/主题一：自定义游戏内容/getting_started/
+      link: "/tutorials/group_1/getting_started/"
 
 features:
   - title: 简单详细，适合新手入门

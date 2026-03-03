@@ -10,7 +10,7 @@ const config: Partial<UserConfig> = {
   srcDir: "docs",
 
   title: "Neoforge 模组教程文档",
-  description: "一个专门提供简单详细的 Neoforge 模组教程文档",
+  description: "一个提供简单详细的 Neoforge 模组教程文档",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -47,6 +47,8 @@ const sidebarConfig: VitePressSidebarOptions[] = [
     scanStartPath: 'tutorials',
     basePath: '/tutorials/',
     resolvePath: '/tutorials/',
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
     useTitleFromFrontmatter: true,
     sortMenusByName: true
   },
@@ -54,6 +56,8 @@ const sidebarConfig: VitePressSidebarOptions[] = [
     documentRootPath: 'docs',
     scanStartPath: 'api',
     resolvePath: '/api/',
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
     useTitleFromFrontmatter: true,
     sortMenusByName: true
   }
