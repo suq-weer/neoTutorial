@@ -5,6 +5,7 @@ import { withSidebar } from 'vitepress-sidebar';
 import { withI18n } from 'vitepress-i18n';
 import { VitePressI18nOptions } from 'vitepress-i18n/dist/types';
 import { VitePressSidebarOptions } from 'vitepress-sidebar/dist/types';
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 const config: Partial<UserConfig> = {
   srcDir: "docs",
@@ -37,7 +38,23 @@ const config: Partial<UserConfig> = {
   markdown: {
     config: (md: { use: (arg0: any) => void; }) => {
       md.use(mdItObsidianCallouts)
+      md.use(groupIconMdPlugin)
     }
+  },
+  vite: {
+    plugins: [
+      // 代码组图标
+      groupIconVitePlugin({
+        costomIcon: {
+          ts: 'logos:typescript-icon',
+          js: 'logos:javascript',
+          md: 'logos:markdown',
+          css: 'logos:css-3',
+          java: 'logos:java',
+          gradle: 'logos:gradle'
+        }
+      })
+    ]
   }
 }
 

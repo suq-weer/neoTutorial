@@ -5,7 +5,7 @@ title: 架设 NeoForge 开发环境并构建自己的第一个模组
 # 架设 NeoForge 开发环境并构建自己的第一个模组
 
 > [!tip] 开始之前
-> 本文档仅适用于 ***Minecraft* 1.21.1 版本的 *NeoForge***，这也是截至到文档项目创建时间最流行的 *Minecraft* 版本，**由于 *Mojang* 在 1.21.x 版本进行大量优化修改与 *NeoForge* 相对应的兼容适配**，本文档不保证某些内容在非 1.21.1 版本下的准确性。
+> 本文档**仅适用于 *Minecraft* 1.21.1 版本的 *NeoForge***，这也是截至到文档项目创建时间最流行的 *Minecraft* 版本，**由于 *Mojang* 在 1.21.x 版本进行大量优化修改与 *NeoForge* 相对应的兼容适配**，本文档不保证某些内容在非 1.21.1 版本下的准确性。
 
 ## 准备工作
 
@@ -65,7 +65,31 @@ Linux 版本建议使用 `yay` 等包管理器先安装 `JetBrains Toolbox`，�
 
 #### 从官方模板生成器中创建项目
 
+首先前往[官方模组模板生成器网页](https://neoforged.net/mod-generator/)填写表单：
+
+![官方模板生成器网页截图](/pic/neoforge_mod_generator.jpg)
+
+> [!tip]+ 参数解释
+>
+> | 参数 | 说明 |
+> | --- | --- |
+> | **`Mod Name`** | **模组名**，请输入模组的英文名以便于生成器生成模组 ID。 |
+> | **`Mod ID`** | **模组 ID**，建议将下面的 **`Generate Mod ID from name`** 勾选项打开让生成器自动生成，取消勾选便会允许此段输入。 |
+> | **`Package Name`** | **模组 *Java* 包名**，需遵循 *Java* 包名规范，可以是一个“倒序”的域名，如 `com.example.examplemod`，尽量保持独特。 |
+> | **`Minecraft Version`** | **模组依赖的 *Minecraft* 版本**，这里我们需要选择 `1.21.1`。 |
+> | **`Gradle Plugin`** | **代码编译器的插件**，*NeoForge* 官方的编译插件有两个，这里我们选择 `ModDevGradle`，此插件对多版本开发支持较好。 |
+> | **`Mod Author`** | **模组在游戏内显示的名字**，建议使用英文名，后面会教如何进行模组介绍的本地化。 |
+> | **`Mod Description`** | **模组在游戏内显示的模组介绍**，建议使用英文进行编写，后面会教如何进行模组介绍的本地化。 |
+> | **`Add Mixin Configuration`** | **是否使用 *Mixin***，*Mixin* 是一个可以让模组直接修改 *Minecraft* 源代码的 *Java* 库工具，建议打开以便后续开发。 |
+
+- **之后点击 `DOWNLOAD MOD PROJECT` 按钮下载模板文件**
+- 将压缩包**解压到电脑里一个合适的地方**
+- **通过 *IntelliJ IDEA* 打开 `build.gradle`**
+- 等待构建完毕***（如果网络不佳建议先停止构建，下文会详细介绍如何更换网络环境）***
+
 #### 通过 *Minecraft Devlopment* 插件创建项目
+
+
 
 ### 配置项目
 

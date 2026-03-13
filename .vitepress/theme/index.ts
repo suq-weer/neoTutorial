@@ -3,7 +3,8 @@ import { h, nextTick, onMounted, watch } from 'vue'
 import { useRoute, type Theme } from 'vitepress'
 import mediumZoom from 'medium-zoom';
 import DefaultTheme from 'vitepress/theme'
-import "@catppuccin/vitepress/theme/macchiato/sky.css";
+import "@catppuccin/vitepress/theme/macchiato/sky.css"
+import 'virtual:group-icons.css'
 import "./index.css"
 
 export default {
